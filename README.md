@@ -34,7 +34,7 @@ In addition to business impacts, the Data Warehouse system was designed with the
 
 ## 4. Data Warehouse System Architecture
 The design of this Data Warehouse system follows classic warehouse design with 4 components: Source Layer, ETL pipelines, Storage Layer, and Reporting Layer
-<img width="1201" height="712" alt="DW system architecture_Github post" src="https://github.com/user-attachments/assets/440f8899-1f64-47a4-bfc1-42355b26e462" />
+<img width="1201" height="712" alt="DW system architecture_Github post" src="https://github.com/user-attachments/assets/14d6db89-b074-45fb-b609-8fe69398bd1f" />
 **The Source Layer** is where data is generated. This system currently supports two types of data sources:
  - API-based sources.
  - Excel-based sources.
