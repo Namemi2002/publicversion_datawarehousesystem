@@ -58,7 +58,7 @@ The design of this Data Warehouse system follows classic warehouse design with 4
 ### Prerequisites
 Before running the system, complete the following setup steps:
 - Install Python 3.13 and MySQL Server 8.0.46
-- Set up a Python environment and install the required libraries using requirements.txt
+- Set up a Python environment and install required libraries using requirements.txt
 - Execute all SQL scripts in:
   - rootdir/warehouse/datalake/createtables.sql
   - rootdir/warehouse/datawarehouse/createtables.sql
