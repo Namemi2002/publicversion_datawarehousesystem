@@ -1,0 +1,12 @@
+# Virtual environment
+venv/
+
+# IDE (PyCharm)
+.idea/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# File just for testing purpose
+src/devtest.py

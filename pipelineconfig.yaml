@@ -1,0 +1,713 @@
+# This file contains all configurations for entire ETL pipelines.
+# For daily operation, only edit values where 'edit here' character appears.
+datawarehouseconfig: # fill in MySQL database connection information
+  connection:
+    host:
+    user:
+    password:
+    database:
+    port:
+ghtk:
+  excel:
+    path:
+      acc1:
+        name:  # fill in name
+        deliveryorders:  # edit here
+        canceledorders:  # edit here
+        paymentminutes:  # edit here
+        compensations:  # edit here
+        checkpath_deliveryorders:
+          - 'ghtk'
+          - 'tk1'
+          - 'đơn đi'
+        checkpath_canceledorders:
+          - 'ghtk'
+          - 'tk1'
+          - 'đơn hủy'
+        checkpath_paymentminutes:
+          - 'ghtk'
+          - 'tk1'
+          - 'bbthanhtoan'
+        checkpath_compensations:
+          - 'ghtk'
+          - 'tk1'
+          - 'bồi hoàn'
+    usecols:
+      deliveryorders:
+        - 'Mã ĐH'
+        - 'Mã ĐH shop'
+        - 'Trạng thái đơn hàng'
+        - 'Thời gian tạo đơn'
+        - 'Thời gian lấy thành công'
+        - 'Thời gian giao hàng thành công'
+        - 'Giá trị hàng hóa'
+      paymentminutes:
+        - 'STT'
+        - 'Mã đơn hàng'
+        - 'Tiền CoD'
+        - 'Phí giao hàng'
+        - 'Phí khai giá'
+        - 'Phí dễ vỡ'
+        - 'Phí gia cố đơn hàng'
+        - 'Phí thực phẩm khô'
+        - 'Phí hàng nguyên hộp'
+        - 'Phí quay lại điểm lấy hàng'
+        - 'Phí bốc xếp 1 chiều, tầng trệt'
+        - 'Phí bốc xếp 1 chiều, tầng lầu'
+        - 'Phí bốc xếp 2 chiều, tầng trệt'
+        - 'Phí thêm người bốc xếp'
+        - 'Phí chờ trên mỗi điểm giao'
+        - 'Phí thử hàng / đồng kiểm'
+        - 'Phí thư tín, tài liệu'
+        - 'Phí nguyên vật liệu'
+        - 'Phí hoàn hàng'
+        - 'Phí thay đổi địa chỉ giao'
+        - 'Phí lưu kho'
+        - 'Phí giao lại'
+        - 'Phí đổi địa chỉ trả hàng'
+        - 'Phí xuất trả lại'
+        - 'Tiền tip COD'
+        - 'Khuyến mãi'
+      compensations:
+        - 'Mã đơn hàng'
+        - 'Tiền bồi hoàn'
+    usedtype:
+      deliveryorders:
+        Mã ĐH: 'object'
+      paymentminutes:
+        Mã đơn hàng: 'object'
+      compensations:
+        Mã đơn hàng: 'object'
+    clean:
+      finalcols:
+        - 'Mã ĐH'
+        - 'Mã ĐH shop'
+        - 'Trạng thái đơn hàng'
+        - 'Tiền CoD'
+        - 'Giá trị hàng hóa'
+        - 'Tổng vận phí'
+        - 'Thời gian tạo đơn'
+        - 'Thời gian lấy thành công'
+        - 'Thời gian giao hàng thành công'
+        - 'ĐVVC'
+        - 'Tiền bồi hoàn'
+        - 'Tài khoản ĐVVC'
+      listfee_paymentminutes:
+        - 'Phí giao hàng'
+        - 'Phí khai giá'
+        - 'Phí dễ vỡ'
+        - 'Phí gia cố đơn hàng'
+        - 'Phí thực phẩm khô'
+        - 'Phí hàng nguyên hộp'
+        - 'Phí quay lại điểm lấy hàng'
+        - 'Phí bốc xếp 1 chiều, tầng trệt'
+        - 'Phí bốc xếp 1 chiều, tầng lầu'
+        - 'Phí bốc xếp 2 chiều, tầng trệt'
+        - 'Phí thêm người bốc xếp'
+        - 'Phí chờ trên mỗi điểm giao'
+        - 'Phí thử hàng / đồng kiểm'
+        - 'Phí thư tín, tài liệu'
+        - 'Phí nguyên vật liệu'
+        - 'Phí hoàn hàng'
+        - 'Phí thay đổi địa chỉ giao'
+        - 'Phí lưu kho'
+        - 'Phí giao lại'
+        - 'Phí đổi địa chỉ trả hàng'
+        - 'Phí xuất trả lại'
+        - 'Tiền tip COD'
+        - 'Khuyến mãi'
+ghn:
+  excel:
+    path:
+      acc1:
+        name:  # fill in name
+        deliveryorders:  # edit here
+        cointransactions:  # edit here
+        checkpath_deliveryorders:
+          - 'ghn'
+          - 'tk1'
+          - 'đơn đi'
+        checkpath_cointransactions:
+          - 'ghn'
+          - 'tk1'
+          - 'gdxu'
+      acc4:
+        name:  # fill in name
+        deliveryorders:  # edit here
+        cointransactions:  # edit here
+        checkpath_deliveryorders:
+          - 'ghn'
+          - 'tk4'
+          - 'đơn đi'
+        checkpath_cointransactions:
+          - 'ghn'
+          - 'tk4'
+          - 'gdxu'
+      acc5:
+        name:  # fill in name
+        deliveryorders:  # edit here
+        cointransactions:  # edit here
+        checkpath_deliveryorders:
+          - 'ghn'
+          - 'tk5'
+          - 'đơn đi'
+        checkpath_cointransactions:
+          - 'ghn'
+          - 'tk5'
+          - 'gdxu'
+      acc6:
+        name:  # fill in name
+        deliveryorders:  # edit here
+        cointransactions:  # edit here
+        checkpath_deliveryorders:
+          - 'ghn'
+          - 'tk6'
+          - 'đơn đi'
+        checkpath_cointransactions:
+          - 'ghn'
+          - 'tk6'
+          - 'gdxu'
+      acc7:
+        name:  # fill in name
+        deliveryorders:  # edit here
+        cointransactions:  # edit here
+        checkpath_deliveryorders:
+          - 'ghn'
+          - 'tk7'
+          - 'đơn đi'
+        checkpath_cointransactions:
+          - 'ghn'
+          - 'tk7'
+          - 'gdxu'
+    usecols:
+      deliveryorders:
+        - 'Mã đơn hàng'
+        - 'Trạng thái'
+        - 'Tổng phí dịch vụ'
+        - 'Phí hoàn hàng'
+        - 'Tiền COD'
+        - 'GTB - Thu tiền'
+        - 'Giá trị khai giá'
+        - 'Mã đơn hàng riêng'
+        - 'Ngày tạo đơn'
+        - 'Ngày lấy hàng thành công'
+        - 'Ngày giao hàng thành công'
+        - 'Ngày giao hàng lần đầu'
+        - 'Ngày thu GTB - thu tiền'
+      cointransactions:
+        - 'Loại giao dịch'
+        - 'Nội dung'
+        - 'Số tiền'
+    usedtype:
+      deliveryorders:
+        Mã đơn hàng: 'object'
+      cointransactions:
+        Nội dung: 'object'
+    clean:
+      finalcols:
+        - 'Mã đơn hàng'
+        - 'Mã đơn hàng riêng'
+        - 'Trạng thái'
+        - 'Tiền COD'
+        - 'Giá trị khai giá'
+        - 'Tổng vận phí'
+        - 'Ngày tạo đơn'
+        - 'Ngày lấy hàng thành công'
+        - 'Ngày giao hàng thành công'
+        - 'ĐVVC'
+        - 'Tiền bồi hoàn'
+        - 'Tài khoản ĐVVC'
+jte:
+  excel:
+    path:
+      acc1:
+        name:  # fill in name
+        deliveryorders:  # edit here
+        checkpath_deliveryorders:
+          - 'tk1'
+          - 'jte'
+          - 'đơn đi'
+      acc2:
+        name:  # fill in name
+        deliveryorders:  # edit here
+        checkpath_deliveryorders:
+          - 'tk2'
+          - 'jte'
+          - 'đơn đi'
+    usecols:
+      deliveryorders:
+        - 'Mã vận đơn'
+        - 'Trạng thái vận đơn'
+        - 'Thời gian tạo đơn'
+        - 'Cước phí'
+        - 'Tiền thu hộ COD'
+        - 'COD thực thu'
+        - 'Mã đơn KH'
+        - 'Thời gian lấy hàng'
+        - 'Thời gian ký nhận'
+        - 'Phí lưu kho'
+    usedtype:
+      deliveryorders:
+        Mã vận đơn: 'object'
+        Mã đơn KH: 'object'
+        Thời gian tạo đơn: 'object'
+        Thời gian lấy hàng: 'object'
+        Thời gian ký nhận: 'object'
+    clean:
+      finalcols:
+        - 'Mã vận đơn'
+        - 'Mã đơn KH'
+        - 'Trạng thái vận đơn'
+        - 'COD thực thu'
+        - 'Tiền thu hộ COD'
+        - 'Tổng vận phí'
+        - 'Thời gian tạo đơn'
+        - 'Thời gian lấy hàng'
+        - 'Thời gian ký nhận'
+        - 'ĐVVC'
+        - 'Tiền bồi hoàn'
+        - 'Tài khoản ĐVVC'
+spx:
+  excel:
+    path:
+      acc1:
+        name:  # fill in name
+        deliveryorders:  # edit here
+        checkpath_deliveryorders:
+          - 'tk1'
+          - 'spx'
+          - 'đơn đi'
+    usecols:
+      deliveryorders:
+        - 'Mã vận đơn'
+        - 'Trạng thái hiện tại'
+        - 'Số tiền COD'
+        - 'Giá trị đơn hàng'
+        - 'Phí vận chuyển thực tế'
+        - 'Thời gian tạo đơn'
+        - 'Thời gian lấy hàng/gửi hàng'
+        - 'Thời gian giao hàng'
+    usedtype:
+      deliveryorders:
+        Mã vận đơn: 'object'
+    clean:
+      finalcols:
+        - 'Mã vận đơn'
+        - 'Mã ĐH Shop'
+        - 'Trạng thái hiện tại'
+        - 'Số tiền COD'
+        - 'Giá trị đơn hàng'
+        - 'Phí vận chuyển thực tế'
+        - 'Thời gian tạo đơn'
+        - 'Thời gian lấy hàng/gửi hàng'
+        - 'Thời gian giao hàng'
+        - 'ĐVVC'
+        - 'Tiền bồi hoàn'
+        - 'Tài khoản ĐVVC'
+cusbank:
+  idfile:  # fill in workbook ID of the google sheet workbook that contains customer banking data
+  idsheet:  # fill in sheet ID of the google sheet workbook that contains customer banking data
+  datarange:  # fill in data range want to retrieve data from the sheet
+  usecols:
+    - 'ID'
+    - 'Ngày'
+    - 'ID đơn hàng'
+    - 'Sđt khách bank'
+    - 'Số tiền bank'
+    - 'Người xác nhận'
+    - 'Mã FT'
+    - 'Ghi chú'
+  finalcols:
+    - 'ID'
+    - 'Ngày'
+    - 'ID đơn hàng'
+    - 'Sđt khách bank'
+    - 'Số tiền bank'
+    - 'Người xác nhận'
+    - 'Mã FT'
+    - 'Ghi chú'
+codtvc:
+  files:
+    idfile: idsheet  # replace idfile with the workbook ID of the google sheet workbook that contains self-delivery orders, also for the idsheet. edit here, once a month
+  datarange:  # fill in data range want to retrieve data from the sheet
+  usecols:
+    - 'STT'
+    - 'Ngày lên'
+    - 'Ngày đi'
+    - 'Tên khách hàng'
+    - 'Sđt khách hàng'
+    - 'Mã hàng'
+    - 'ID đơn'
+    - 'SL đơn'
+    - 'SL váy'
+    - 'Địa chỉ'
+    - 'Trạng thái'
+    - 'Tổng Cod'
+    - 'Phí Ship'
+    - 'Cod BANK'
+    - 'Cod Tiền mặt'
+    - 'NV đi đơn'
+  finalcols:
+    - 'Mã vận đơn'
+    - 'ID đơn'
+    - 'Trạng thái'
+    - 'COD thu khách'
+    - 'Tổng Cod'
+    - 'Phí Ship'
+    - 'Ngày lên'
+    - 'Ngày đi'
+    - 'Thời gian ký nhận'
+    - 'ĐVVC'
+    - 'Tiền bồi hoàn'
+    - 'Tài khoản ĐVVC'
+internalprice:
+  idfile:  # fill in workbook ID of the google sheet workbook that contains internal product information data
+  idsheet:  # fill in sheet ID of the google sheet workbook that contains internal product information data
+  datarange:  # fill in data range want to retrieve data from the sheet
+  usecols:
+    - 'Mã SP'
+    - 'Col2'
+    - 'Col3'
+    - 'Col4'
+    - 'Col5'
+    - 'Col6'
+    - 'Col7'
+    - 'Col8'
+    - 'Col9'
+    - 'Col10'
+    - 'Giá nội bộ'
+    - 'Col12'
+    - 'Col13'
+    - 'Col14'
+    - 'Col15'
+    - 'Col16'
+    - 'Col17'
+    - 'Col18'
+    - 'Col19'
+    - 'Col20'
+    - 'Col21'
+    - 'Col22'
+    - 'Col23'
+    - 'Col24'
+    - 'Col25'
+    - 'Col26'
+    - 'Col27'
+    - 'Col28'
+    - 'Col29'
+    - 'Mục đích'
+    - 'Màu sắc'
+    - 'Chất liệu'
+    - 'Cổ váy'
+    - 'Tay váy'
+    - 'Chiều dài tay'
+    - 'Kiểu váy'
+    - 'Mẫu vải'
+  finalcols:
+    - 'Mã SP'
+    - 'Giá nội bộ'
+    - 'Mục đích'
+    - 'Màu sắc'
+    - 'Chất liệu'
+    - 'Cổ váy'
+    - 'Tay váy'
+    - 'Chiều dài tay'
+    - 'Kiểu váy'
+    - 'Mẫu vải'
+returnedorderscan:
+  idfile:  # fill in workbook ID of the google sheet workbook that contains returned order scanning data
+  finalcols:
+    - 'Key'
+    - 'Ngày bắn'
+    - 'Mã vận đơn'
+    - 'Mã SP'
+  sheetinfo:
+    ghn:
+      idsheet:  # fill in sheet ID of the google sheet workbook that contains returned order scanning data
+      datarange:  # fill in data range want to retrieve data from the sheet
+      usecols:
+        - 'Key'
+        - 'NGÀY'
+        - 'THÁNG'
+        - 'Mã vận đơn'
+        - 'Col1'
+        - 'Mã SP'
+    ghtk:
+      idsheet:  # fill in sheet ID of the google sheet workbook that contains returned order scanning data
+      datarange:  # fill in data range want to retrieve data from the sheet
+      usecols:
+        - 'Key'
+        - 'NGÀY'
+        - 'THÁNG'
+        - 'Mã vận đơn'
+        - 'Col1'
+        - 'Mã SP'
+    jte:
+      idsheet:  # fill in sheet ID of the google sheet workbook that contains returned order scanning data
+      datarange:  # fill in data range want to retrieve data from the sheet
+      usecols:
+        - 'Key'
+        - 'NGÀY'
+        - 'THÁNG'
+        - 'Mã vận đơn'
+        - 'Col1'
+        - 'Mã SP'
+    spx:
+      idsheet:  # fill in sheet ID of the google sheet workbook that contains returned order scanning data
+      datarange:  # fill in data range want to retrieve data from the sheet
+      usecols:
+        - 'Key'
+        - 'NGÀY'
+        - 'THÁNG'
+        - 'Mã vận đơn'
+        - 'Col1'
+        - 'Mã SP'
+    best:
+      idsheet:  # fill in sheet ID of the google sheet workbook that contains returned order scanning data
+      datarange:  # fill in data range want to retrieve data from the sheet
+      usecols:
+        - 'Key'
+        - 'NGÀY'
+        - 'THÁNG'
+        - 'Mã vận đơn'
+        - 'Col1'
+        - 'Mã SP'
+deliveryorderscan:
+  idfile:  # fill in workbook ID of the google sheet workbook that contains delivery orders scanning data
+  idsheet:  # fill in sheet ID of the google sheet workbook that contains delivery orders scanning data
+  datarange:  # fill in data range want to retrieve data from the sheet
+  usecols:
+    - 'Mã vận đơn'
+    - 'Ngày bắn đơn'
+  finalcols:
+    - 'Mã vận đơn'
+    - 'Ngày bắn đơn'
+    - 'Buffer1'
+    - 'Buffer2'
+    - 'Buffer3'
+deliveryordershandlingteam:
+  datarange:  # fill in data range want to retrieve data from the sheet
+  usecols:
+    - 'Mã vận đơn'
+    - 'Col3'
+    - 'Col4'
+    - 'Col5'
+    - 'Col6'
+    - 'Col7'
+    - 'Col8'
+    - 'Col9'
+    - 'Col10'
+    - 'Col11'
+    - 'Col12'
+    - 'Ghi chú 1'
+    - 'Ghi chú 2'
+    - 'Ghi chú 3'
+  finalcols:
+    - 'Mã vận đơn'
+    - 'Buffer1'
+    - 'Ghi chú 1'
+    - 'Ghi chú 2'
+    - 'Ghi chú 3'
+  sheetpath:
+    month1:
+      idfile:  # fill in workbook ID of the google sheet workbook that contains delivery orders from handling team data, edit here, once a month
+      sheets:  # fill in list of sheet IDs of the google sheet workbook that contains delivery orders from handling team data, edit here, once a month
+    month2:
+      idfile:  # fill in workbook ID of the google sheet workbook that contains delivery orders from handling team data, edit here, once a month
+      sheets:  # fill in list of sheet IDs of the google sheet workbook that contains delivery orders from handling team data, edit here, once a month
+    month3:
+      idfile:  # fill in workbook ID of the google sheet workbook that contains delivery orders from handling team data, edit here, once a month
+      sheets:  # fill in list of sheet IDs of the google sheet workbook that contains delivery orders from handling team data, edit here, once a month
+transaction_jte:
+  excel:
+    folderpath:  # edit here
+    check_filepath:
+      - 'JTE'
+      - 'đối soát'
+    usecols:
+      - 'Mã vận đơn'
+      - 'Tiền thực nhận'
+      - 'Kỳ thanh toán'
+    usedtype:
+      Mã vận đơn: 'object'
+      Tiền thực nhận: 'int'
+      Kỳ thanh toán: 'object'
+    finalcols:
+      - 'Kỳ thanh toán'
+      - 'Mã vận đơn'
+      - 'Tiền thực nhận'
+      - 'Ngày giao dịch'
+      - 'Hãng vận chuyển'
+      - 'Nội dung giao dịch'
+transaction_spx:
+  excel:
+    folderpath:  # edit here
+    check_filepath:
+      - 'SPX'
+      - 'đối soát'
+    usecols:
+      - 'Mã giao dịch'
+      - 'Mã vận đơn'
+      - 'Thời gian giao dịch'
+      - 'Số tiền (VND)'
+    usedtype:
+      Mã giao dịch: 'object'
+      Mã vận đơn: 'object'
+      Số tiền (VND): 'int'
+    finalcols:
+      - 'Mã giao dịch'
+      - 'Mã vận đơn'
+      - 'Số tiền (VND)'
+      - 'Thời gian giao dịch'
+      - 'Hãng vận chuyển'
+      - 'Nội dung giao dịch'
+transaction_ghn:
+  excel:
+    folderpath:  # edit here
+    check_filepath:
+      - 'GHN'
+      - 'đối soát'
+    usecols:
+      - 'Mã đơn GHN'
+      - '(1) + (2) + (3) + (4) + (5)'
+    usedtype:
+      Mã đơn GHN: 'object'
+      (1) + (2) + (3) + (4) + (5): 'int'
+    finalcols:
+      - 'Phiên'
+      - 'Mã đơn GHN'
+      - '(1) + (2) + (3) + (4) + (5)'
+      - 'Ngày'
+      - 'Hãng vận chuyển'
+      - 'Nội dung giao dịch'
+cointransaction_ghn:
+  excel:
+    folderpath:  # edit here
+    check_filepath:
+      - 'GHN'
+      - 'gdxu'
+    usecols:
+      - 'Ngày'
+      - 'Loại giao dịch'
+      - 'Nội dung'
+      - 'Số tiền'
+    usedtype:
+      Ngày: 'object'
+      Số tiền: 'int'
+    finalcols:
+      - 'Mã giao dịch'
+      - 'Nội dung'
+      - 'Số tiền'
+      - 'Ngày'
+      - 'Hãng vận chuyển'
+      - 'Nội dung giao dịch'
+nhanhvn:
+  api:
+    orders:
+      startdate:  # The time part must be 00:00:00, edit here
+      enddate:  # The time part must be 23:59:59, edit here
+      orderfinalcols:
+        - 'ID'
+        - 'Thoi gian'
+        - 'Ten khach hang'
+        - 'So dien thoai'
+        - 'Thanh pho'
+        - 'Quan huyen'
+        - 'Hang van chuyen'
+        - 'Ma don hang van chuyen'
+        - 'Trang thai'
+        - 'Nguon don hang cha'
+        - 'Nguon don hang con'
+        - 'Nen tang'
+        - 'Ngay gui HVC'
+        - 'COD tra truoc'
+        - 'Nguoi tao don'
+        - 'Ghi chu noi bo'
+        - 'Ghi chu cua khach'
+        - 'previous_ID ghi chu noi bo'
+        - 'previous_ID ghi chu cua khach'
+        - 'Di lech ma'
+      orderdetailfinalcols:
+        - 'Ma san pham'
+        - 'ID'
+        - 'Ma vach'
+        - 'Ma san pham cha'
+        - 'Gia'
+        - 'Chiet khau toan bo san pham'
+        - 'So luong'
+      codeexplain:
+        idfile:  # fill in workbook ID of the google sheet workbook that contains mapping data for some fields of data retrieved from Nhanhvn API
+        idsheet:  # fill in sheet ID of the google sheet workbook that contains mapping data for some fields of data retrieved from Nhanhvn API
+        orderstatus:
+          datarange:  # fill in data range
+        salechannel:
+          datarange:  # fill in data range
+        cityaddress:
+          datarange:  # fill in data range
+        districtaddress:
+          datarange:  # fill in data range
+shopee:
+  api:
+    header_other_endpoints:
+      Content-Type: 'application/json'
+    orders:
+      starttime:
+        time_from:  # The time part must be 00:00:00, edit here
+      endtime:
+        time_to:  # The time part must be 23:59:59. edit here
+      chunk_date: 13 # [1 to 15]
+      page_size: 90 # [1 to 100]
+    orderincome:
+      starttime:
+        date_from:  # The time part must be 00:00:00, edit here
+      endtime:
+        date_to:  # The time part must be 23:59:59. edit here
+      chunk_date: 12 # [1 to 14]
+      page_size: 30 # no range information, recommend 30
+    orderdetail:
+      chunk_record: 40 # [1 to 50]
+    escrowdetail:
+      chunk_record: 35 # [1 to 50], recommend 20
+    mass_tracking_number:
+      chunk_record: 40 # [1 to 50]
+  token:
+    timerenew_beforeexpired: 1800
+    header_gettoken_endpoint:
+      Content-Type: 'application/json'
+tiktok:
+  api:
+    orders:
+      strattime:
+        create_time_ge:  # The time part must be 00:00:00, edit here
+      endtime:
+        create_time_lt:  # The time part must be 23:59:59. edit here
+      page_size: 80 # [1 to 100]
+    returnorders:
+      chunk_record: 40 # [1 to 50]
+  token:
+    timerenew_beforeexpired: 1800
+  excel:
+    income:
+      folderpath:  # edit here
+      usedtype:
+        ID đơn hàng/điều chỉnh: 'object'
+        Thời gian quyết toán đơn hàng: 'object'
+      finalcols:
+        - 'ID đơn hàng/điều chỉnh'
+        - 'Thời gian quyết toán đơn hàng'
+        - 'Loại giao dịch'
+        - 'Tổng số tiền quyết toán'
+        - 'Tổng doanh thu'
+        - 'Tổng phụ sau giảm giá của người bán'
+        - 'Tổng phụ trước giảm giá'
+        - 'Giảm giá của người bán'
+        - 'Tổng phụ của khoản hoàn tiền sau giảm giá của người bán'
+        - 'Tổng phụ hoàn tiền trước giảm giá của người bán'
+        - 'Khoản hoàn tiền giảm giá của người bán'
+        - 'Tổng phí'
+updatereport_ggsheet:
+  googlesheet:
+    idfile:  # workbook ID of the google sheet workbook that contains google sheet reporting information
+    idsheet:  # sheet ID of the google sheet workbook that contains google sheet reporting information
+  params:  # queries may contain named placeholder (showed inside {}), use this parameter to fill those placeholders. For example:
+    reportmonth: 6
+    reportyear: 2026

@@ -1,0 +1,20 @@
+# This file contains some credentials.
+# Fills in all necessary information, following inline instructions.
+shopee:
+  token:
+    workbookid:  # paste the ID file of the google sheet workbook that contains Shopee & Tiktok API credentials here
+    sheetid:  # paste the ID sheet that contains Shopee API credentials here
+tiktok:
+  token:
+    workbookid:  # paste the ID file of the google sheet workbook that contains Shopee & Tiktok API credentials here
+    sheetid:  # paste the ID sheet that contains Tiktok API credentials here
+nhanhvn:
+  account: # for each Nhanhvn account, fills in appid, businessid, accesstoken. Notice that appid and businessid must be text. If you have more than 2 Nhanhvn accounts, just add them in with the same format; if less than 2, just delete the redundant one.
+    mydu1hn_thanhnammdu:
+      appid:
+      businessid:
+      accesstoken:
+    mydu1hn_thanhnammdu_1:
+      appid:
+      businessid:
+      accesstoken:
