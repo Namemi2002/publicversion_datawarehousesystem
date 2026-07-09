@@ -39,7 +39,7 @@ The design of this Data Warehouse system follows classic warehouse design with 4
  - API-based sources.
  - Excel-based sources.
 
-**The ETL Pipelines** follow a modular architecture in which each module contains classes and functions responsible for a single task. The architecture consists of four modules:
+**The ETL Pipelines** are designed for batch processing and follow a modular architecture in which each module contains classes and functions responsible for a single task. The architecture consists of four modules:
  - Extractor: responsible for extracting data from source systems.
  - Cleaner: responsible for cleaning, transforming, and standardizing data.
  - Loader: responsible for loading data to target.
